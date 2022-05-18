@@ -1,31 +1,20 @@
-import { UserModel } from './schema/User';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 export const findAll = async () => {
-  const allUsers = UserModel.find().exec();
-  return allUsers;
+  return 'return all';
 };
 
 export const findOne = async (id: string) => {
-  const user = await UserModel.findById(id);
-  return user;
+  return 'return one';
 };
 
 export const create = async (createUserDto: CreateUserDto) => {
-  const newUser = new UserModel(createUserDto);
-  const savedUser = await newUser.save();
-  return savedUser.id;
+  return 'create one';
 };
 
 export const update = async (id: string, updateUserDto: UpdateUserDto) => {
-  const newUpdateUserDto: UpdateUserDto = { ...updateUserDto };
-
-  const updatedUser = await UserModel.findByIdAndUpdate(id, newUpdateUserDto, {
-    new: true,
-  }).exec();
-
-  return updatedUser;
+  return 'update one';
 };
 
 export const remove = (id: string) => {

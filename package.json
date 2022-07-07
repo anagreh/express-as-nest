@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node dist/bin/www.js",
     "dev": "nodemon src/bin/www.ts",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
